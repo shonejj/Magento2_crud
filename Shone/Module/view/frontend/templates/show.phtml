@@ -1,0 +1,68 @@
+<style>
+    body {
+        /* Set "my-sec-counter" to 0 */
+        counter-reset: my-sec-counter;
+    }
+
+    .try::before {
+        /* Increment "my-sec-counter" by 1 */
+        counter-increment: my-sec-counter;
+        content: counter(my-sec-counter) ". ";
+    }
+</style>
+
+<body>
+    <h1>show the data from the db here </h1>
+
+    <table>
+        <tr>
+            <th>si.no</th>
+            
+            <th>
+                <?= __('Name'); ?>
+            </th>
+            <th>
+                <?= __('Email'); ?>
+            </th>
+            <th>
+                <?= __('Contact No'); ?>
+            </th>
+            <th colspan="2">
+                <?= __('Action'); ?>
+            </th>
+        </tr>
+        <?php
+        $customerCollection = $block->getCustomerCollection();
+        foreach ($customerCollection as $customer):
+            ?>
+
+            <tr>
+                <td class="try"> </td>
+    
+                    <?php $customer->getid(); ?>
+                
+                <td>
+                    <?= $customer->getname(); ?>
+                </td>
+                <td>
+                    <?= $customer->getemail(); ?>
+                </td>
+                <td>
+                    <?= $customer->gettelephone(); ?>
+                </td>
+
+                <td>
+                    <a href="<?= $block->getUrl('night/Index/Edit') . 'id/' . $customer->getId(); ?>"
+                    class="action primary">Edit</a>
+                </td>
+                <td>
+                    <a href="<?= $block->getUrl('night/index/delete') . '?id=' . $customer->getId(); ?>"
+                       class="action primary">Delete</a>
+                </td>
+
+
+            </tr>
+
+        <?php endforeach; ?>
+    </table>
+</body>

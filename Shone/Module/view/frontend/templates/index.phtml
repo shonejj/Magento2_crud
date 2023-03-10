@@ -1,0 +1,35 @@
+<h1> this is the index page</h1>
+<h2>
+    register with your credential bellow : 
+</h2>
+
+<form method="post" action="<?php echo $block->getUrl('night/index/save' , ['_secure' => true]); ?>">
+    <div class="field name required">
+        <label for="name" class="label"><span><?php echo __('Name') ?></span></label>
+        <div class="control">
+            <input type="text" id="name" name="name" class="input-text" required>
+        </div>
+    </div>
+    <div class="field email required">
+        <label for="email" class="label"><span><?php echo __('Email') ?></span></label>
+        <div class="control">
+            <input type="email" id="email" name="email" class="input-text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        </div>
+    </div>
+    <div class="field telephone required">
+        <label for="telephone" class="label"><span><?php echo __('Telephone') ?></span></label>
+        <div class="control">
+            <input type="tel" id="telephone" name="telephone" class="input-text"  pattern="[0-9]{10}"  required title= "enter a vaild 10 digit mobile number">
+        </div>
+    </div>
+</br>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary">
+                <span><?php echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<br>
+<a href="/night/index/show" class="action submit primary float-end">view</a>

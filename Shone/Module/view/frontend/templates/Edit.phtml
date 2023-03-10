@@ -1,0 +1,48 @@
+<?php  
+    $collection = $block->getCustomerCollection();
+?>
+<h1> update </h1>
+<h2>
+    edit your existing credential bellow : 
+</h2>
+
+
+
+<form action="<?php echo $block->getFormAction(); ?>" method="post">
+    <input type="hidden" name="id" value="<?php echo $block->getFormData()['id']; ?>">
+    <div class="field name">
+        <label class="label" for="name"><span><?php echo __('Name') ?></span></label>
+        <div class="control">
+            <input type="text" id="name" name="name" class="input-text" value="<?php echo $block->getFormData()['name']; ?>">
+        </div>
+    </div>
+    <div class="field email required">
+        <label for="email" class="label"><span><?php echo __('Email') ?></span></label>
+        <div class="control">
+            <input type="email" id="email" name="email" value="<?php echo $block->getFormData()['email']; ?>" class="input-text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        </div>
+    </div>
+    <div class="field telephone required">
+        <label for="telephone" class="label"><span><?php echo __('Telephone') ?></span></label>
+        <div class="control">
+            <input type="tel" id="telephone" name="telephone" value="<?php echo $block->getFormData()['telephone']; ?>" class="input-text"  pattern="[0-9]{10}"  required title= "enter a vaild 10 digit mobile number">
+        </div>
+    </div>
+</br>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action save primary" title="<?php echo __('Save') ?>"><span><?php echo __('Save') ?></span></button>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
