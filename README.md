@@ -1,7 +1,7 @@
 # Magento2_crud
 module,model,view : simple crud using magento 2
 
-#create this table in the default magento db manualy : 
+# create this table in the default magento db manualy : 
 
 CREATE TABLE testtable (
   id INT PRIMARY KEY,
@@ -9,4 +9,5 @@ CREATE TABLE testtable (
   email VARCHAR(255),
   telephone VARCHAR(255)
 );
+
 path of the module must be inside app/code 
