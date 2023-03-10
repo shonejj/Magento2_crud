@@ -1,5 +1,5 @@
 # Magento2_crud
-module,model,view : simple crud using magento 2
+module,model,view : crud using magento 2 with manual db table 
 
 # create this table in the default magento db manualy : 
 
